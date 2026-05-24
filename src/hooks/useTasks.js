@@ -72,7 +72,7 @@ export function useTasks() {
       dispatch({ type: 'RESET_TASKS_SUCCESS' });
     } catch (err) {
       const message = err.response?.data?.error || 'Error resetting tasks';
-      dispatch({ type: 'SET_ERROR', payload: message });
+      dispatch({ type: 'RESET_TASKS_ERROR', payload: message });
       addToast('error', message);
     }
   }, [dispatch, addToast, fetchAll]);
