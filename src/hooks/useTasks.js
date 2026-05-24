@@ -31,21 +31,37 @@ export function useTasks() {
   }, [token, fetchAll]);
 
   const completeTask = useCallback(
-    async (taskId) => {
-      dispatch({ type: 'COMPLETE_TASK_START' });
+  async (taskId) => {
+    dispatch({ type: 'COMPLETE_TASK_START' });
+    try {
+      await tasksApi.complete(taskId);
+      addToast('success', 'Task marked complete!');
+      
+      // Refresh data - but don't let this fail silently
       try {
-        await tasksApi.complete(taskId);
-        addToast('success', 'Task marked complete!');
         await fetchAll();
-        dispatch({ type: 'COMPLETE_TASK_SUCCESS' });
-      } catch (err) {
-        const message = err.response?.data?.error || err.response?.data?.message || 'Error completing task';
-        dispatch({ type: 'COMPLETE_TASK_ERROR', payload: message });
-        addToast('error', message);
+      } catch (refreshErr) {
+        console.error('Refresh failed:', refreshErr);
+        // Don't show error to user for refresh failure
       }
-    },
-    [dispatch, addToast, fetchAll]
-  );
+      
+      dispatch({ type: 'COMPLETE_TASK_SUCCESS' });
+    } catch (err) {
+      // Log the full error to console for debugging
+      console.error('Complete task error:', err);
+      console.error('Error response:', err.response);
+      
+      const message = err.response?.data?.error 
+        || err.response?.data?.message 
+        || err.message 
+        || 'Error completing task';
+      
+      dispatch({ type: 'COMPLETE_TASK_ERROR', payload: message });
+      addToast('error', message);
+    }
+  },
+  [dispatch, addToast, fetchAll]
+);
 
   const resetTasks = useCallback(async () => {
     dispatch({ type: 'RESET_TASKS_START' });
