@@ -39,8 +39,8 @@ export function useTasks() {
         await fetchAll();
         dispatch({ type: 'COMPLETE_TASK_SUCCESS' });
       } catch (err) {
-        const message = err.response?.data?.error || 'Error completing task';
-        dispatch({ type: 'SET_ERROR', payload: message });
+        const message = err.response?.data?.error || err.response?.data?.message || 'Error completing task';
+        dispatch({ type: 'COMPLETE_TASK_ERROR', payload: message });
         addToast('error', message);
       }
     },
