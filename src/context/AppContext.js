@@ -35,6 +35,8 @@ function appReducer(state, action) {
       return { ...state, loading: true, loadingMessage: 'Completing task...' };
     case 'COMPLETE_TASK_SUCCESS':
       return { ...state, loading: false, loadingMessage: '' };
+     case 'COMPLETE_TASK_ERROR':
+      return { ...state, loading: false, loadingMessage: '', error: action.payload }; 
     case 'FETCH_RECOMMENDATION_SUCCESS':
       return { ...state, recommendation: action.payload };
     case 'RESET_TASKS_START':
