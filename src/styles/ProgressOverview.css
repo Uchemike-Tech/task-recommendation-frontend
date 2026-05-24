@@ -1,0 +1,88 @@
+.progress-overview {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.progress-card {
+  background: var(--color-pure-white);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.progress-card-title {
+  font-size: var(--font-heading-sm);
+  font-weight: 600;
+  color: var(--color-dark-slate);
+}
+
+.progress-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.progress-bar-track {
+  height: 8px;
+  background: var(--neutral-100);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--gradient-progress);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow) var(--ease-default);
+  animation: progressFill 1s var(--ease-default);
+}
+
+.progress-bar-text {
+  font-size: var(--font-body-sm);
+  color: var(--neutral-500);
+  text-align: right;
+}
+
+.progress-subtext {
+  font-size: var(--font-body-md);
+  color: var(--color-elite-teal);
+  font-weight: 500;
+}
+
+/* Metric cards */
+.progress-metric-value {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-elite-teal);
+  line-height: 1;
+}
+
+.progress-metric-label {
+  font-size: var(--font-body-md);
+  font-weight: 600;
+  color: var(--color-dark-slate);
+}
+
+.progress-metric-sub {
+  font-size: var(--font-body-sm);
+  color: var(--neutral-400);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .progress-overview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .progress-overview {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

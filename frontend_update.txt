@@ -1,0 +1,958 @@
+# TaskFlow AI - MODERN FRONTEND REDESIGN PROMPT
+
+## VISION
+Redesign TaskFlow AI into a **modern, enterprise-grade task recommendation dashboard** with:
+- Contemporary design language (2024-2025 standards)
+- Mobile-first, fully responsive experience
+- Mature, sophisticated color palette
+- Smooth animations and micro-interactions
+- Professional typography and spacing
+- Accessibility best practices
+
+---
+
+## DESIGN SYSTEM OVERHAUL
+
+### Color Palette (Modern & Mature)
+**Primary Colors:**
+- Dark Slate: #1a1f3a (primary text, headers)
+- Navy Accent: #2d3e50 (secondary text)
+- Soft Charcoal: #f8f9fb (light backgrounds)
+- Pure White: #ffffff (cards, main content)
+
+**Accent Colors:**
+- Elite Teal: #06b6d4 (primary actions, highlights)
+- Vibrant Cyan: #0ea5e9 (hover states, secondary actions)
+- Emerald Success: #10b981 (completions, positive states)
+- Amber Warning: #f59e0b (warnings, priority 2)
+- Coral Alert: #ef4444 (errors, priority 1)
+
+**Gradients:**
+- Hero Gradient: `linear-gradient(135deg, #06b6d4 0%, #0ea5e9 50%, #0d9488 100%)`
+- Card Gradient: `linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(13, 148, 136, 0.05) 100%)`
+- Success Gradient: `linear-gradient(135deg, #10b981 0%, #059669 100%)`
+
+**Neutral Scale:**
+- 50: #f9fafb
+- 100: #f3f4f6
+- 200: #e5e7eb
+- 300: #d1d5db
+- 400: #9ca3af
+- 500: #6b7280
+- 600: #4b5563
+- 700: #374151
+- 800: #1f2937
+- 900: #111827
+
+### Typography System
+**Font Family:** Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif
+
+**Font Scale:**
+- Display Large (H1): 48px / 57.6px (mobile: 32px), weight 700, letter-spacing -0.02em
+- Display Small (H2): 36px / 43.2px (mobile: 28px), weight 700, letter-spacing -0.01em
+- Heading Large (H3): 28px / 33.6px (mobile: 24px), weight 600, letter-spacing 0
+- Heading Medium (H4): 24px / 28.8px (mobile: 20px), weight 600
+- Heading Small (H5): 20px / 24px (mobile: 18px), weight 600
+- Body Large: 16px / 24px, weight 400
+- Body Medium: 14px / 20px, weight 400
+- Body Small: 12px / 16px, weight 400
+- Label: 12px / 16px, weight 500, letter-spacing 0.5px
+- Caption: 11px / 16px, weight 400
+
+### Spacing System (8px base unit)
+- xs: 4px
+- sm: 8px
+- md: 16px
+- lg: 24px
+- xl: 32px
+- 2xl: 48px
+- 3xl: 64px
+- 4xl: 96px
+
+### Border Radius
+- sm: 4px
+- md: 8px
+- lg: 12px
+- xl: 16px
+- 2xl: 20px
+- full: 9999px
+
+### Shadows (Elevation System)
+- Shadow-sm: `0 1px 2px 0 rgba(0, 0, 0, 0.05)`
+- Shadow-md: `0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)`
+- Shadow-lg: `0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)`
+- Shadow-xl: `0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)`
+- Shadow-elevation: `0 12px 32px -4px rgba(6, 182, 212, 0.15)`
+
+---
+
+## PAGE 1: AUTHENTICATION (Login/Register)
+
+### Layout Structure
+**Mobile (< 768px):**
+- Full-screen layout
+- 16px horizontal padding
+- Content centered vertically
+- Single column form
+
+**Tablet (768px - 1024px):**
+- Split screen design (50/50)
+- Left: Branding/hero section
+- Right: Form panel
+
+**Desktop (> 1024px):**
+- Split screen design (55/45)
+- Left: Full-height hero with gradient, branding, benefits list
+- Right: Floating form panel with subtle shadow
+
+### Hero Section (Desktop/Tablet Only)
+- Full gradient background: `linear-gradient(135deg, #06b6d4 0%, #0ea5e9 50%, #0d9488 100%)`
+- Animated subtle SVG pattern in background (diagonal lines, circles)
+- Content positioning: centered vertically/horizontally
+- **Copy:**
+  - Headline: "Intelligent Task Sequencing" (H2)
+  - Subheading: "Let AI guide your workflow to maximum efficiency" (Body Large)
+  - Benefits list (3 items with icons):
+    - Icon: ⚡ "Smart Recommendations"
+    - Icon: 🎯 "Dependency Resolution"
+    - Icon: 📈 "Progress Tracking"
+
+### Form Panel
+**Structure:**
+- White card on soft background
+- Rounded corners: 16px
+- Shadow: elevation
+- Max-width: 380px
+- Padding: 32px (mobile: 24px)
+
+**Tabs/Toggle:**
+- Two clear sections: "Sign In" and "Create Account"
+- Use underline indicator (animated transition)
+- Smooth fade-in/out of form content
+
+**Login Form Fields:**
+1. Email Input
+   - Placeholder: "you@example.com"
+   - Icon: @
+   - Type: email
+   - Validation: real-time
+   
+2. Password Input
+   - Placeholder: "••••••••"
+   - Icon: lock
+   - Type: password
+   - Toggle show/hide (eye icon)
+
+3. "Remember Me" Checkbox (optional)
+
+4. "Sign In" Button
+   - Full width
+   - Primary color: #06b6d4
+   - Hover: #0ea5e9
+   - Active state: darker teal
+   - Loading state: spinner inside button
+   - Border-radius: 8px
+   - Height: 44px
+   - Font weight: 600
+
+5. "Forgot password?" link (gray text, underline on hover)
+
+6. Divider: "Or continue with"
+
+7. Social sign-in buttons (Google, GitHub) - optional
+   - Gray border buttons
+   - Hover: light gray background
+
+8. Footer: "Don't have an account? Sign up" (link in teal)
+
+**Register Form Fields:**
+1. Full Name Input
+   - Placeholder: "Jane Doe"
+   - Icon: user
+   
+2. Email Input
+   - Placeholder: "you@example.com"
+   - Real-time validation (show green checkmark when valid)
+   
+3. Password Input
+   - Show password strength indicator (weak/fair/strong)
+   - Color: red → orange → green
+   - Requirements text below (animated reveal)
+   
+4. Confirm Password Input
+   - Real-time match validation
+   - Show checkmark when passwords match
+   
+5. Terms checkbox
+   - "I agree to Terms & Privacy Policy" (links in teal)
+   
+6. "Create Account" Button
+   - Same styling as login button
+   - Loading state during submission
+   
+7. Footer: "Already have an account? Sign in" (link in teal)
+
+**Form States:**
+- Default: clean, inviting
+- Focus: input border color → #06b6d4, subtle glow
+- Error: red border, error icon, error message below
+- Success: green checkmark, success message
+- Loading: button disabled, spinner
+
+**Error Messages:**
+- Positioned below input
+- Color: #ef4444
+- Icon: ⚠️
+- Animation: slide in from top
+
+**Responsive Adjustments (Mobile):**
+- Remove hero section
+- Show app logo and tagline at top
+- Gradient background: `linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%)`
+- Form centered with 16px padding
+- Buttons and inputs full width
+
+---
+
+## PAGE 2: MAIN DASHBOARD (Post-Login)
+
+### Header/Navigation
+**Layout:**
+- Fixed header (stick to top on scroll)
+- Height: 64px
+- Background: Pure white (#ffffff)
+- Border-bottom: 1px solid #e5e7eb
+- Shadow: shadow-sm
+
+**Desktop Layout (> 1024px):**
+- Flexbox row: [Logo + Brand | Spacer | Progress Badge | User Menu | Logout]
+- Padding: 16px 32px
+- Max-width: 1600px (centered container)
+
+**Mobile Layout (< 768px):**
+- Flexbox row: [Logo | Spacer | Progress Badge | Menu Icon]
+- Padding: 12px 16px
+- Side drawer for user menu on mobile
+
+**Components:**
+
+1. **Logo/Branding**
+   - Logo icon: stylized AI brain + checkmark
+   - Text: "TaskFlow AI"
+   - Font: 20px, weight 700, color #1a1f3a
+   - Hover: cursor pointer (can navigate home)
+
+2. **Progress Badge** (Desktop only)
+   - Circular progress indicator (SVG)
+   - Size: 56px
+   - Center number: "45%" (completed percentage)
+   - Subtitle: "12/20 tasks"
+   - Colors: background #f3f4f6, progress #06b6d4
+   - Animation: smoothly updates on task completion
+
+3. **User Menu** (Dropdown or Drawer on mobile)
+   - Avatar: initials on gradient background
+   - Name: username (color: #1a1f3a)
+   - Joined date: "Member since Jan 2024" (small gray text)
+   - "Edit Profile" link
+   - "Settings" link
+   - Divider
+   - "Sign Out" button (red text)
+
+### Main Content Area
+
+**Mobile (< 768px):**
+- Single column layout
+- No sidebar
+- Full-width cards with 16px margin
+
+**Tablet (768px - 1024px):**
+- Two-column layout possible
+- Recommendation card full width at top
+- Tasks below in two columns
+
+**Desktop (> 1024px):**
+- Three-section layout:
+  - Left Sidebar (280px): AI Insights panel, Quick filters
+  - Center (1fr): Recommendation card, Task lists
+  - Right Sidebar (optional): Stats, Calendar, Dependencies
+
+### Section 1: AI RECOMMENDATION CARD (Hero)
+
+**Position:** Top of page, full width
+**Layout:** 
+- Desktop: 2 columns (left 60%, right 40%)
+- Mobile: single column, stacked
+
+**Desktop Version:**
+- Left side (60%):
+  - Background: `linear-gradient(135deg, #06b6d4 0%, #0ea5e9 50%, #0d9488 100%)`
+  - Padding: 40px
+  - Border-radius: 16px
+  - Shadow: elevation
+  - Text color: white
+  
+  - Icon (animated): 🎯 (pulsing animation)
+  - Label: "AI RECOMMENDATION" (uppercase, letter-spacing 1px, 11px, weight 600, opacity 0.9)
+  - Headline: Recommended task name (H2, white, weight 700)
+  - Confidence: "94% Confidence" (Body Medium, opacity 0.85)
+  - Description: "Based on completed tasks and project dependencies" (small text, opacity 0.75)
+  - CTA Button: "Complete This Task"
+    - Background: white
+    - Text: #06b6d4
+    - Hover: background #f3f4f6
+    - Padding: 12px 32px
+    - Border-radius: 8px
+    - Weight: 600
+    - Icon: checkmark
+    - Loading state: spinner + "Marking..." text
+
+- Right side (40%):
+  - Background: rgba(255, 255, 255, 0.05)
+  - Backdrop-filter: blur(10px)
+  - Padding: 24px
+  - Border-radius: 12px
+  - Border: 1px solid rgba(255, 255, 255, 0.1)
+  
+  - Label: "ALSO CONSIDER" (uppercase, small, opacity 0.85)
+  - Alternative suggestions (list, 2-3 items):
+    - Task name (white, body medium)
+    - Confidence percentage (opacity 0.7)
+    - Hover: slight background highlight
+    - Click: navigate to task or add to queue
+
+**Mobile Version:**
+- Full width, single column
+- All content stacked vertically
+- Background same gradient
+- Padding: 24px
+- Buttons full width (44px height)
+
+**Interaction States:**
+- Hover: slight scale up (1.02)
+- Button click: confirm animation (checkmark burst)
+- Loading: disable interactions, show spinner
+- Success: toast notification with animation
+
+### Section 2: PROGRESS OVERVIEW
+
+**Position:** Below recommendation card
+**Layout:** 
+- Desktop: 3 columns
+- Tablet: 2 columns
+- Mobile: 1 column, stacked
+
+**Component Design:**
+
+1. **Master Progress Card**
+   - Background: pure white with subtle gradient border
+   - Border: 1px solid #e5e7eb
+   - Padding: 24px
+   - Border-radius: 12px
+   - Shadow: shadow-md
+   
+   - Heading: "Overall Progress" (H5, dark slate)
+   - Progress bar:
+     - Background: #f3f4f6
+     - Fill: linear-gradient(90deg, #06b6d4 0%, #10b981 100%)
+     - Height: 8px
+     - Border-radius: 4px
+     - Percentage text: "12/20 Tasks Completed" (right-aligned)
+   - Subtext: "Great pace! Keep going!" (teal, 14px, weight 500)
+   - Animation: smooth fill on percentage change
+
+2. **Completion Rate Card**
+   - Large percentage display: "60%"
+   - Font: 48px, weight 700, teal
+   - Label: "Completion Rate"
+   - Small metric: "8 days remaining (estimated)" (gray)
+   - Icon: 📊
+
+3. **Time Estimate Card**
+   - Total hours remaining: "24 hours"
+   - Label: "Remaining Work"
+   - Breakdown: "Estimated completion by" + date
+   - Icon: ⏱️
+
+**Responsive:** Stack vertically on mobile, wrap to 2 columns on tablet
+
+### Section 3: TASK TABS & LISTS
+
+**Tab Navigation:**
+- Two tabs: "Pending Tasks" | "Completed Tasks"
+- Tab styling:
+  - Inactive: gray text (#6b7280), no background
+  - Active: teal text (#06b6d4) + underline animation
+  - Underline: 3px solid #06b6d4, slides smoothly
+  - Padding: 12px 24px
+  - Hover: light background (#f9fafb)
+  
+**Tab Content Container:**
+- Background: pure white
+- Border-radius: 12px (top corners only if tabs connected)
+- Padding: 24px
+- Shadow: shadow-sm
+- Smooth fade-in/out animation on tab switch (200ms)
+
+#### PENDING TASKS LIST
+
+**View Options:**
+- Toggle: Grid view (default) | List view (mobile defaults to list)
+- Desktop Grid: 2-3 columns (responsive)
+- Tablet: 2 columns
+- Mobile: 1 column (list)
+
+**Task Card Design:**
+
+- Background: pure white
+- Border: 1px solid #e5e7eb
+- Border-radius: 12px
+- Padding: 16px
+- Shadow: shadow-sm
+- Hover state:
+  - Box-shadow: shadow-lg
+  - Transform: translateY(-4px)
+  - Transition: all 200ms ease
+
+**Card Content Structure:**
+
+```
+┌─────────────────────────────┐
+│ ⚡ Category Tag              │ (left-aligned, small badge)
+│ (e.g., "Backend", "Testing")│
+│                             │
+│ Task Name                   │ (H5, dark slate, weight 600)
+│                             │
+│ Task description (if any)   │ (Body Small, gray, optional)
+│                             │
+│ [P1 Badge] [Complexity]     │ (inline, left)
+│                             │
+│ Est. 6 hours | 4/5 Complex  │ (Body Small, gray)
+│                             │
+│         [Mark Complete]     │ (right-aligned button)
+└─────────────────────────────┘
+```
+
+**Badge Styling:**
+
+1. **Priority Badge:**
+   - P1 (Critical):
+     - Background: #fee2e2
+     - Text: #dc2626
+     - Border: 1px solid #fecaca
+   - P2 (High):
+     - Background: #fef3c7
+     - Text: #d97706
+     - Border: 1px solid #fed7aa
+   - P3 (Medium):
+     - Background: #dbeafe
+     - Text: #0284c7
+     - Border: 1px solid #bfdbfe
+   
+   - Padding: 4px 12px
+   - Border-radius: 20px
+   - Font: 11px, weight 600
+
+2. **Category Badge:**
+   - Background: #f3f4f6
+   - Text: #4b5563
+   - Padding: 4px 12px
+   - Border-radius: 20px
+   - Font: 11px, weight 500
+
+3. **Complexity Indicator:**
+   - Stars (1-5) in teal or gradient
+   - Alternative: numbered circles (1/5)
+   - Color: #06b6d4
+
+**Buttons in Cards:**
+
+- "Mark Complete" Button:
+  - Style: primary teal
+  - Size: small (12px font, 32px height)
+  - Border-radius: 6px
+  - Hover: background #0ea5e9
+  - Active: darker teal
+  - Loading: spinner inside
+  - Icon: checkmark
+  - On click: confirm toast, then update
+
+**Empty State** (when no pending tasks):
+- Centered content:
+  - Icon: 🎉 (large, 64px, opacity 0.5)
+  - Headline: "All Tasks Completed!" (H4)
+  - Subtext: "Amazing work! Reset your tasks to continue learning."
+  - Button: "Reset All Tasks" (secondary button)
+  - Background: light gradient (soft teal)
+
+**Loading State:**
+- Skeleton cards (shimmer animation)
+- 3-5 placeholder cards
+- Each has pulsing gray background
+
+#### COMPLETED TASKS LIST
+
+**View Options:** Same as pending (grid/list toggle)
+
+**Task Card Design:**
+- Much lighter styling (faded appearance)
+- Background: #f9fafb
+- Border: 1px solid #e5e7eb
+- Opacity: 0.7
+- Text color: #9ca3af (grayed out)
+
+**Card Content:**
+- Checkmark icon: large, teal, left side
+- Task name: white with strikethrough or lighter color
+- No action buttons
+- Hover: subtle scale only, no shadow
+
+**Example Structure:**
+```
+┌─────────────────────────────┐
+│ ✓ Requirements Analysis     │
+│   Completed 2 days ago      │
+│                             │
+│ Category: Planning          │
+└─────────────────────────────┘
+```
+
+**Empty State:**
+- Icon: 📋
+- Text: "No completed tasks yet. Start marking tasks complete!"
+
+### Section 4: RESET & FOOTER
+
+**Reset Button:**
+- Position: sticky bottom or fixed bottom on mobile
+- Button design:
+  - Style: secondary (outline)
+  - Text: "Reset All Tasks"
+  - Icon: 🔄
+  - Hover: light teal background
+  - Color: #6b7280 text, border #d1d5db
+  - Visibility: only show if at least 1 task completed
+
+**Confirmation Dialog:**
+- Modal overlay (dark semi-transparent background)
+- Card centered on screen
+- Content:
+  - Icon: ⚠️
+  - Headline: "Reset All Tasks?"
+  - Description: "This will mark all tasks as pending again. You can't undo this action."
+  - Buttons:
+    - "Cancel" (secondary)
+    - "Reset" (danger/red, #ef4444)
+  - Animation: slide up from bottom on mobile, scale in on desktop
+
+**Footer:**
+- Position: bottom of page
+- Background: #f9fafb
+- Border-top: 1px solid #e5e7eb
+- Padding: 32px 16px
+- Content:
+  - "TaskFlow AI © 2024"
+  - "Privacy Policy" | "Terms" | "Contact" (links)
+  - Small text: "Powered by Machine Learning"
+
+---
+
+## ANIMATION & MICRO-INTERACTIONS
+
+### Transitions
+- Default ease: cubic-bezier(0.4, 0, 0.2, 1) (200ms)
+- Quick: 150ms (button hovers)
+- Slow: 300ms (page transitions)
+- Tab switches: fade + slide (200ms)
+
+### Key Animations
+
+1. **Task Completion:**
+   - Checkmark burst animation (10 particles)
+   - Color shift: border → green → fadeout
+   - Sound: subtle success chime (optional)
+   - Toast notification slides in from top-right
+
+2. **Progress Bar Update:**
+   - Fill animates (300ms cubic-bezier)
+   - Number counter animates (incremental)
+   - Pulse effect on completion
+
+3. **Recommendation Card Load:**
+   - Fade in from bottom + slide up (300ms)
+   - Content staggered: title → confidence → button
+
+4. **Tab Switch:**
+   - Underline slides to new position
+   - Content fades out, new content fades in
+   - Duration: 200ms
+
+5. **Hover Effects:**
+   - Card: subtle shadow + scale (1.02)
+   - Button: background color shift
+   - Link: underline reveals
+
+6. **Loading Spinners:**
+   - Custom spinner design using teal
+   - Smooth infinite rotation
+   - Size: 20px (inline), 40px (full page)
+
+7. **Empty State Icons:**
+   - Gentle bounce animation (1s loop)
+   - Opacity pulse (0.6-1)
+
+8. **Form Inputs:**
+   - Focus: border color fade (200ms), glow effect
+   - Valid: checkmark appears with scale animation
+   - Error: shake animation (200ms, 3 shakes)
+
+---
+
+## MOBILE EXPERIENCE (< 768px)
+
+### Navigation
+- Top header fixed
+- Hamburger menu icon (three lines) for additional options
+- Slide-out drawer from right (user menu, settings)
+- Bottom tab navigation for Pending/Completed (optional)
+
+### Buttons & Touchpoints
+- Minimum 44x44px touch targets
+- Adequate spacing (8-12px) between clickable elements
+- Full-width buttons in forms
+- Clear visual feedback on tap
+
+### Forms
+- Large input fields (48px minimum height)
+- Single column layout
+- Keyboard optimization (correct input types)
+- Password visibility toggle
+- Error messages positioned above/below field
+
+### Recommendation Card
+- Full width, single column
+- Larger touch button (48px height)
+- Simplified alternative suggestions (2 only)
+
+### Task Lists
+- List view by default (not grid)
+- Full-width cards with 16px margin
+- Swipe actions (optional): swipe left to mark complete
+- Drag to reorder (optional, lower priority)
+
+### Responsive Font Sizes
+- Display: 32px (mobile) vs 48px (desktop)
+- Headings: scale down 80-90%
+- Body text: 14-16px (readable)
+- Labels: 12px minimum
+
+---
+
+## ACCESSIBILITY & USABILITY
+
+### WCAG 2.1 AA Compliance
+- Color contrast ratios: 4.5:1 for body text, 3:1 for graphics
+- No color as sole indicator (always include labels/icons)
+- Focus indicators: 2px outline in #06b6d4
+- Keyboard navigation: tab order logical, all interactive elements accessible
+
+### Keyboard Support
+- Tab: move to next interactive element
+- Shift+Tab: move to previous
+- Enter: activate button, submit form
+- Space: toggle checkbox, activate button
+- Escape: close modals, drawers
+
+### Screen Reader
+- Proper semantic HTML: buttons, inputs, headings
+- ARIA labels for icons
+- Form labels associated with inputs
+- Status messages announced (task completion)
+
+### Readability
+- Line height: 1.5 for body text
+- Line length: max 75 characters on desktop
+- Adequate spacing between sections
+- Clear visual hierarchy
+
+---
+
+## ERROR & SUCCESS FEEDBACK
+
+### Toast Notifications
+- Position: top-right (desktop), top-center (mobile)
+- Auto-dismiss: 4 seconds
+- Styles:
+  - Success: green background (#10b981), white text, icon ✓
+  - Error: red background (#ef4444), white text, icon ⚠️
+  - Info: blue background (#0ea5e9), white text, icon ℹ️
+  - Warning: orange background (#f59e0b), white text, icon ⚡
+- Animation: slide in from top (300ms), fade out (200ms)
+
+### Inline Validation
+- Real-time feedback on form fields
+- Email format validation (green checkmark when valid)
+- Password strength indicator (weak/fair/strong)
+- Confirm password match (green checkmark)
+- Show/hide character count for password
+
+### Error Messages
+- Red text (#ef4444)
+- Below the input field
+- Clear, actionable language
+- Icon: ⚠️ or ❌
+- Smooth slide-in animation
+
+### Success Messages
+- Task completed: "Task marked complete!" + checkmark animation
+- Form submitted: "Account created! Redirecting..." + spinner
+- Tasks reset: "All tasks have been reset. Starting fresh!" + refresh icon
+
+---
+
+## PERFORMANCE & OPTIMIZATION
+
+### Code Splitting
+- Separate bundles for auth and dashboard
+- Lazy load chart/analytics components
+- Dynamic imports for non-critical features
+
+### Image Optimization
+- SVG for icons (scalable, small)
+- Optimize hero gradient (CSS, no images)
+- Use WebP for any images with PNG fallback
+
+### Caching Strategy
+- Cache API responses (tasks, profile) for 5 minutes
+- Debounce rapid API calls (e.g., mark complete)
+- LocalStorage for user token, preferences
+- Service Worker for offline detection
+
+### CSS/Bundle Optimization
+- Use CSS variables for theming (no duplicates)
+- Minify production CSS
+- Critical CSS inline in HTML
+- Remove unused CSS with PurgeCSS
+
+### React Optimization
+- React.memo for task cards
+- useCallback for event handlers
+- useMemo for filtered task arrays
+- Code split pages (Auth vs Dashboard)
+
+---
+
+## BROWSER & DEVICE SUPPORT
+
+### Browsers
+- Chrome/Edge: Latest 2 versions
+- Firefox: Latest 2 versions
+- Safari: Latest 2 versions (iOS 14+)
+
+### Devices
+- iPhone SE (smallest), iPhone 14 Pro Max
+- iPad, iPad Pro
+- Android: Samsung Galaxy, Google Pixel
+- Desktop: 1920x1080 (common), 4K displays
+
+### Testing
+- Use Chrome DevTools device emulation
+- Test on actual devices (at least one iOS, one Android)
+- Lighthouse audits for performance, accessibility
+- Network throttling (3G, 4G speeds)
+
+---
+
+## STATE MANAGEMENT & DATA FLOW
+
+### Context/State Structure
+```
+AppContext:
+  - token (JWT)
+  - user {username, joinedDate, totalCompleted}
+  - tasks {pending: [], completed: []}
+  - recommendation {taskId, taskName, confidence, alternatives: []}
+  - loading {isLoading, message}
+  - error {hasError, message}
+  - ui {activeTab, viewMode, sidebarOpen}
+```
+
+### Reducer Actions
+- SET_TOKEN, SET_USER
+- LOAD_TASKS_START, LOAD_TASKS_SUCCESS, LOAD_TASKS_ERROR
+- COMPLETE_TASK_START, COMPLETE_TASK_SUCCESS
+- FETCH_RECOMMENDATION_SUCCESS
+- RESET_TASKS_START, RESET_TASKS_SUCCESS
+- SET_ACTIVE_TAB, TOGGLE_SIDEBAR
+
+### Data Refresh Triggers
+- On login: fetch tasks, recommendation, profile
+- On task completion: refresh tasks, recommendation, profile
+- On reset: refresh all
+- On page focus: light refresh (tasks only)
+
+---
+
+## CONFIGURATION & CUSTOMIZATION
+
+### Dark Mode (Future)
+- CSS variables for light/dark
+- Preference detection: prefers-color-scheme
+- Toggle in settings
+
+### Theme Customization
+- Primary color variable: --color-primary: #06b6d4
+- Easy to swap color across app (e.g., teal → purple)
+
+### Language Support (Future)
+- i18n structure ready
+- English default
+- Easy to add more languages
+
+---
+
+## FILE STRUCTURE
+
+```
+src/
+├── components/
+│   ├── auth/
+│   │   ├── AuthPage.jsx
+│   │   ├── LoginForm.jsx
+│   │   ├── RegisterForm.jsx
+│   │   └── AuthCard.jsx
+│   ├── dashboard/
+│   │   ├── Dashboard.jsx
+│   │   ├── Header.jsx
+│   │   ├── RecommendationCard.jsx
+│   │   ├── ProgressOverview.jsx
+│   │   ├── TaskTabs.jsx
+│   │   ├── PendingTaskList.jsx
+│   │   ├── CompletedTaskList.jsx
+│   │   ├── TaskCard.jsx
+│   │   └── ResetModal.jsx
+│   ├── common/
+│   │   ├── Toast.jsx
+│   │   ├── LoadingSpinner.jsx
+│   │   ├── Badge.jsx
+│   │   └── Button.jsx
+│   └── layouts/
+│       └── MainLayout.jsx
+├── hooks/
+│   ├── useAuth.js
+│   ├── useTasks.js
+│   ├── useApi.js
+│   └── useLocalStorage.js
+├── context/
+│   └── AppContext.js
+├── styles/
+│   ├── globals.css (variables, base styles)
+│   ├── components.css
+│   ├── animations.css
+│   └── responsive.css
+├── utils/
+│   ├── api.js (axios configuration)
+│   ├── formatters.js
+│   ├── validators.js
+│   └── storage.js
+├── pages/
+│   ├── AuthPage.jsx
+│   └── DashboardPage.jsx
+├── App.jsx
+└── index.jsx
+```
+
+---
+
+## IMPLEMENTATION CHECKLIST
+
+### Phase 1: Setup
+- [ ] Create design tokens CSS file (colors, spacing, typography)
+- [ ] Set up base layout components (Header, Footer, Container)
+- [ ] Configure Axios with interceptors for JWT
+- [ ] Set up global styles and CSS variables
+
+### Phase 2: Authentication
+- [ ] Design AuthPage with responsive layout
+- [ ] Create LoginForm with validation & error handling
+- [ ] Create RegisterForm with strength indicator
+- [ ] Implement form animations and transitions
+- [ ] Add success/error toasts
+
+### Phase 3: Dashboard Layout
+- [ ] Design Header with progress badge
+- [ ] Create RecommendationCard with gradient
+- [ ] Build ProgressOverview with 3 metric cards
+- [ ] Implement task tabs with smooth animations
+
+### Phase 4: Task Management
+- [ ] Create TaskCard component (desktop & mobile)
+- [ ] Build PendingTaskList with grid/list toggle
+- [ ] Build CompletedTaskList with faded styling
+- [ ] Implement mark complete functionality
+- [ ] Add empty state designs
+
+### Phase 5: Interactions
+- [ ] Add all animations and transitions
+- [ ] Implement loading spinners
+- [ ] Create confirmation dialogs
+- [ ] Add toast notifications
+- [ ] Test keyboard navigation
+
+### Phase 6: Mobile Optimization
+- [ ] Verify responsive breakpoints
+- [ ] Test on actual mobile devices
+- [ ] Optimize touch targets
+- [ ] Test form inputs on mobile
+- [ ] Test navigation/drawer on mobile
+
+### Phase 7: Accessibility & Testing
+- [ ] Run Lighthouse audits
+- [ ] Check color contrast ratios
+- [ ] Test keyboard navigation
+- [ ] Test with screen reader
+- [ ] Cross-browser testing
+
+### Phase 8: Performance
+- [ ] Code splitting implementation
+- [ ] Image optimization
+- [ ] Bundle size analysis
+- [ ] Network request caching
+- [ ] Final performance testing
+
+---
+
+## NOTES FOR DEVELOPER
+
+1. **Use Pure CSS Where Possible:** Avoid external UI libraries. Build components from scratch for custom, polished feel.
+
+2. **Responsive Mobile-First:** Design for mobile first, then enhance for larger screens.
+
+3. **Consistent Spacing:** Always use the 8px system. Never add arbitrary margins/padding.
+
+4. **Smooth Interactions:** Every state change should have a transition (except loading skeletons).
+
+5. **Accessibility First:** Build for keyboard users and screen readers from the start.
+
+6. **API Error Handling:** Always show user-friendly error messages. Never show raw API errors.
+
+7. **Loading States:** Always show a loading indicator when making API calls.
+
+8. **Form Validation:** Validate on blur and submit. Show real-time feedback.
+
+9. **Test Early:** Test on mobile devices early and often. Don't leave mobile testing for the end.
+
+10. **Performance:** Monitor bundle size. Use React DevTools to check for unnecessary renders.
+
+---
+
+## INSPIRATION & REFERENCES
+
+- Dribbble: Search "task management dashboard", "modern SaaS"
+- Figma Community: Look for dashboard templates
+- ProductHunt: Check top-rated task/productivity apps
+- Vercel, Linear, Notion design systems (color, typography)
+
+---
+
+END OF PROMPT

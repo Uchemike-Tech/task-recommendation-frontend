@@ -1,0 +1,125 @@
+.task-list {
+  animation: fadeIn var(--transition-base) var(--ease-default);
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .task-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .task-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.task-list-view {
+  grid-template-columns: 1fr;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: var(--space-3xl) var(--space-lg);
+  background: var(--gradient-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--neutral-200);
+}
+
+.empty-icon {
+  display: block;
+  margin-bottom: var(--space-md);
+}
+
+.empty-icon-check::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+  border: 3px solid var(--color-emerald-success);
+  border-radius: var(--radius-full);
+  opacity: 0.4;
+}
+
+.empty-icon-clipboard::after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 48px;
+  margin: 0 auto;
+  border: 3px solid var(--neutral-400);
+  border-radius: var(--radius-sm);
+  opacity: 0.4;
+}
+
+.empty-icon-generic::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+  border: 3px solid var(--neutral-400);
+  border-radius: var(--radius-lg);
+  opacity: 0.4;
+}
+
+.empty-title {
+  font-size: var(--font-heading-md);
+  font-weight: 600;
+  color: var(--color-dark-slate);
+  margin-bottom: var(--space-sm);
+}
+
+.empty-text {
+  font-size: var(--font-body-md);
+  color: var(--neutral-500);
+}
+
+/* Skeleton Loading */
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .skeleton-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .skeleton-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skeleton-card {
+  background: var(--color-pure-white);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.skeleton-line {
+  height: 14px;
+  background: linear-gradient(90deg, var(--neutral-100) 25%, var(--neutral-200) 50%, var(--neutral-100) 75%);
+  background-size: 200px 100%;
+  border-radius: var(--radius-sm);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.w-40 { width: 40%; }
+.w-60 { width: 60%; }
+.w-80 { width: 80%; }

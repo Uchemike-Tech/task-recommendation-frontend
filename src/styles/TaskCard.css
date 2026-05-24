@@ -1,0 +1,120 @@
+.task-card {
+  background: var(--color-pure-white);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base) var(--ease-default);
+}
+
+.task-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.task-body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.task-top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.task-category-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: var(--neutral-100);
+  color: var(--neutral-600);
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.task-name {
+  font-size: var(--font-heading-sm);
+  font-weight: 600;
+  color: var(--color-dark-slate);
+  margin: 0;
+}
+
+.task-description {
+  font-size: var(--font-body-sm);
+  color: var(--neutral-400);
+  line-height: var(--line-body-sm);
+}
+
+.task-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.task-meta-item {
+  font-size: var(--font-body-sm);
+  color: var(--neutral-500);
+}
+
+.task-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-xs);
+}
+
+/* Completed Card */
+.completed-card {
+  background: var(--neutral-50);
+  border: 1px solid var(--neutral-200);
+  opacity: 0.7;
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.completed-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.completed-card .task-name {
+  color: var(--neutral-400);
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+.completed-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--color-emerald-success);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.task-completed-mark {
+  padding: var(--space-md) 0 var(--space-md) var(--space-md);
+}
+
+.completed-card .task-body {
+  padding-left: var(--space-sm);
+}
+
+.completed-card .task-meta {
+  margin-top: var(--space-xs);
+}
+
+.task-completed-date {
+  font-size: var(--font-body-sm);
+  color: var(--neutral-400);
+}

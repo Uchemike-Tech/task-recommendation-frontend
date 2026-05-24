@@ -1,0 +1,68 @@
+.task-tabs {
+  margin-bottom: var(--space-md);
+}
+
+.tabs-header {
+  position: relative;
+  display: flex;
+  background: var(--color-pure-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.tab-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  font-size: var(--font-body-md);
+  font-weight: 500;
+  color: var(--neutral-500);
+  cursor: pointer;
+  transition: color var(--transition-fast) var(--ease-default);
+  position: relative;
+  z-index: 1;
+}
+
+.tab-btn:hover {
+  color: var(--color-dark-slate);
+  background: var(--neutral-50);
+}
+
+.tab-btn.active {
+  color: var(--color-elite-teal);
+}
+
+.tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-full);
+  background: var(--neutral-100);
+  color: var(--neutral-600);
+  font-size: var(--font-caption);
+  font-weight: 600;
+}
+
+.tab-btn.active .tab-count {
+  background: rgba(6, 182, 212, 0.1);
+  color: var(--color-elite-teal);
+}
+
+.tab-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background: var(--color-elite-teal);
+  transition: transform var(--transition-base) var(--ease-default);
+}

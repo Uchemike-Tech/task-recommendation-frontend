@@ -1,0 +1,63 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  backdrop-filter: blur(2px);
+}
+
+.modal-card {
+  background: var(--color-pure-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-xl);
+}
+
+.modal-icon-line {
+  width: 40px;
+  height: 4px;
+  background: var(--color-coral-alert);
+  border-radius: var(--radius-full);
+  margin: 0 auto var(--space-md);
+}
+
+.modal-title {
+  font-size: var(--font-heading-md);
+  font-weight: 600;
+  color: var(--color-dark-slate);
+  margin-bottom: var(--space-sm);
+}
+
+.modal-description {
+  font-size: var(--font-body-md);
+  color: var(--neutral-500);
+  line-height: var(--line-body-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.modal-actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .modal-card {
+    animation: slideUp var(--transition-base) var(--ease-default);
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .modal-actions .btn {
+    width: 100%;
+  }
+}

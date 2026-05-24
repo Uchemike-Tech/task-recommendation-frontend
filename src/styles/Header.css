@@ -1,0 +1,210 @@
+.dashboard-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-pure-white);
+  border-bottom: 1px solid var(--neutral-200);
+  box-shadow: var(--shadow-sm);
+  height: 64px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  cursor: pointer;
+}
+
+.logo-text {
+  font-size: var(--font-heading-sm);
+  font-weight: 700;
+  color: var(--color-dark-slate);
+  letter-spacing: -0.02em;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+/* Progress Badge */
+.progress-badge {
+  display: none;
+  position: relative;
+  width: 56px;
+  height: 56px;
+}
+
+.progress-ring {
+  width: 56px;
+  height: 56px;
+}
+
+.progress-ring-fill {
+  transition: stroke-dashoffset var(--transition-slow) var(--ease-default);
+}
+
+.progress-badge-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-percent {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-elite-teal);
+  line-height: 1;
+}
+
+.progress-count {
+  font-size: 8px;
+  color: var(--neutral-500);
+  line-height: 1;
+  margin-top: 1px;
+}
+
+/* User Menu */
+.user-menu-wrapper {
+  position: relative;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--gradient-hero);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast) var(--ease-default);
+}
+
+.user-avatar:hover {
+  transform: scale(1.05);
+}
+
+.avatar-initials {
+  color: white;
+  font-size: var(--font-body-md);
+  font-weight: 600;
+}
+
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 98;
+  background: transparent;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 99;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--neutral-200);
+  min-width: 200px;
+  padding: var(--space-sm) 0;
+}
+
+.dropdown-header {
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-name {
+  font-weight: 600;
+  color: var(--color-dark-slate);
+  font-size: var(--font-body-md);
+}
+
+.dropdown-joined {
+  font-size: var(--font-body-sm);
+  color: var(--neutral-400);
+  margin-top: 2px;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: var(--neutral-200);
+  margin: var(--space-xs) 0;
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: var(--font-body-md);
+  color: var(--neutral-700);
+  cursor: pointer;
+  transition: background var(--transition-fast) var(--ease-default);
+}
+
+.dropdown-item:hover {
+  background: var(--neutral-50);
+}
+
+.dropdown-danger {
+  color: var(--color-coral-alert);
+}
+
+.dropdown-danger:hover {
+  background: #fef2f2;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger-line {
+  width: 20px;
+  height: 2px;
+  background: var(--color-dark-slate);
+  border-radius: 1px;
+  transition: all var(--transition-fast) var(--ease-default);
+}
+
+@media (min-width: 768px) {
+  .header-inner {
+    padding: 0 var(--space-xl);
+  }
+
+  .progress-badge {
+    display: block;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+  }
+}

@@ -1,0 +1,15 @@
+Uncaught runtime errors:
+×
+ERROR
+dispatch is not a function
+TypeError: dispatch is not a function
+    at switchTab (http://localhost:3000/static/js/bundle.js:3410:5)
+    at onClick (http://localhost:3000/static/js/bundle.js:3554:28)
+    at executeDispatch (http://localhost:3000/static/js/bundle.js:14626:7)
+    at runWithFiberInDEV (http://localhost:3000/static/js/bundle.js:5978:68)
+    at processDispatchQueue (http://localhost:3000/static/js/bundle.js:14654:31)
+    at http://localhost:3000/static/js/bundle.js:14951:7
+    at batchedUpdates$1 (http://localhost:3000/static/js/bundle.js:7269:38)
+    at dispatchEventForPluginEventSystem (http://localhost:3000/static/js/bundle.js:14730:5)
+    at dispatchEvent (http://localhost:3000/static/js/bundle.js:16928:31)
+    at dispatchDiscreteEvent (http://localhost:3000/static/js/bundle.js:16910:58)

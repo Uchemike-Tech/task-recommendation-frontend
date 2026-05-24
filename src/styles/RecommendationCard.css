@@ -1,0 +1,144 @@
+.recommendation-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--gradient-hero);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-elevation);
+  margin-bottom: var(--space-lg);
+  overflow: hidden;
+  color: white;
+}
+
+.rec-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  gap: var(--space-md);
+}
+
+.rec-badge {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rec-badge-dot {
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: var(--radius-full);
+  opacity: 0.8;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.rec-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rec-label {
+  font-size: var(--font-caption);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.rec-task-name {
+  font-size: var(--font-heading-md);
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.01em;
+  line-height: var(--line-heading-md);
+}
+
+.rec-confidence {
+  font-size: var(--font-body-md);
+  opacity: 0.85;
+}
+
+.rec-description {
+  font-size: var(--font-body-sm);
+  opacity: 0.75;
+  margin-bottom: var(--space-sm);
+}
+
+.rec-cta {
+  align-self: flex-start;
+  margin-top: var(--space-sm);
+}
+
+/* Alternatives */
+.rec-alternatives {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: var(--space-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rec-alt-label {
+  display: block;
+  font-size: var(--font-caption);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: var(--space-sm);
+}
+
+.rec-alt-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.rec-alt-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--transition-fast) var(--ease-default);
+}
+
+.rec-alt-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.rec-alt-name {
+  font-size: var(--font-body-md);
+}
+
+.rec-alt-confidence {
+  font-size: var(--font-body-sm);
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .recommendation-card {
+    flex-direction: row;
+  }
+
+  .rec-main {
+    flex-direction: row;
+    padding: var(--space-xl);
+    width: 60%;
+  }
+
+  .rec-alternatives {
+    width: 40%;
+    border-top: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .rec-task-name {
+    font-size: var(--font-display-sm);
+    line-height: var(--line-display-sm);
+  }
+}

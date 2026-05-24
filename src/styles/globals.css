@@ -1,0 +1,182 @@
+:root {
+  /* Primary Colors */
+  --color-dark-slate: #1a1f3a;
+  --color-navy-accent: #2d3e50;
+  --color-soft-charcoal: #f8f9fb;
+  --color-pure-white: #ffffff;
+
+  /* Accent Colors */
+  --color-elite-teal: #06b6d4;
+  --color-vibrant-cyan: #0ea5e9;
+  --color-emerald-success: #10b981;
+  --color-amber-warning: #f59e0b;
+  --color-coral-alert: #ef4444;
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 50%, #0d9488 100%);
+  --gradient-card: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(13, 148, 136, 0.05) 100%);
+  --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --gradient-progress: linear-gradient(90deg, #06b6d4 0%, #10b981 100%);
+
+  /* Neutral Scale */
+  --neutral-50: #f9fafb;
+  --neutral-100: #f3f4f6;
+  --neutral-200: #e5e7eb;
+  --neutral-300: #d1d5db;
+  --neutral-400: #9ca3af;
+  --neutral-500: #6b7280;
+  --neutral-600: #4b5563;
+  --neutral-700: #374151;
+  --neutral-800: #1f2937;
+  --neutral-900: #111827;
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Font Scale */
+  --font-display-xl: 48px;
+  --font-display-sm: 36px;
+  --font-heading-lg: 28px;
+  --font-heading-md: 24px;
+  --font-heading-sm: 20px;
+  --font-body-lg: 16px;
+  --font-body-md: 14px;
+  --font-body-sm: 12px;
+  --font-label: 12px;
+  --font-caption: 11px;
+
+  /* Line Heights */
+  --line-display-xl: 57.6px;
+  --line-display-sm: 43.2px;
+  --line-heading-lg: 33.6px;
+  --line-heading-md: 28.8px;
+  --line-heading-sm: 24px;
+  --line-body-lg: 24px;
+  --line-body-md: 20px;
+  --line-body-sm: 16px;
+  --line-label: 16px;
+  --line-caption: 16px;
+
+  /* Spacing (8px base) */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-elevation: 0 12px 32px -4px rgba(6, 182, 212, 0.15);
+
+  /* Transitions */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 150ms;
+  --transition-base: 200ms;
+  --transition-slow: 300ms;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-body-md);
+  line-height: var(--line-body-md);
+  color: var(--color-dark-slate);
+  background: var(--color-soft-charcoal);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--color-dark-slate);
+  font-weight: 600;
+}
+
+a {
+  color: var(--color-elite-teal);
+  text-decoration: none;
+  transition: color var(--transition-fast) var(--ease-default);
+}
+
+a:hover {
+  color: var(--color-vibrant-cyan);
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-family);
+  border: none;
+  outline: none;
+}
+
+input, select, textarea {
+  font-family: var(--font-family);
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Focus Indicators */
+:focus-visible {
+  outline: 2px solid var(--color-elite-teal);
+  outline-offset: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neutral-300);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-400);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-xl);
+  }
+}
