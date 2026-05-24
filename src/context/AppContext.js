@@ -41,6 +41,8 @@ function appReducer(state, action) {
       return { ...state, loading: true, loadingMessage: 'Resetting tasks...' };
     case 'RESET_TASKS_SUCCESS':
       return { ...state, loading: false, loadingMessage: '' };
+     case 'RESET_TASKS_ERROR':
+      return { ...state, loading: false, loadingMessage: '', error: action.payload }; 
     case 'SET_ERROR':
       return { ...state, error: action.payload };
     case 'CLEAR_ERROR':
