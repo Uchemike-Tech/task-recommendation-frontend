@@ -1,52 +1,140 @@
 import axios from 'axios';
 
-const API_URL = 'https://task-recommendation-backend.onrender.com';
+// Define your backend URLs
+const BACKENDS = {
+  primary: 'https://task-recommendation-backend.onrender.com',
+  fallback: 'https://task-recommendation-backend.streamlit.app'
+};
 
-const api = axios.create({
-  baseURL: API_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+// Track which backend is currently active
+let currentBackend = BACKENDS.primary;
+let currentBaseURL = BACKENDS.primary;
 
-api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token');
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-  return config;
-});
+// Create axios instance function
+const createAxiosInstance = (baseURL) => {
+  const instance = axios.create({
+    baseURL,
+    timeout: 8000, // 8 second timeout
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
-api.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    if (error.response?.status === 401) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('userId');
-      localStorage.removeItem('username');
-      window.location.reload();
+  // Request interceptor - add auth token
+  instance.interceptors.request.use((config) => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
     }
-    return Promise.reject(error);
+    return config;
+  });
+
+  // Response interceptor - handle errors
+  instance.interceptors.response.use(
+    (response) => response,
+    (error) => {
+      if (error.response?.status === 401) {
+        localStorage.removeItem('token');
+        localStorage.removeItem('userId');
+        localStorage.removeItem('username');
+        window.location.reload();
+      }
+      return Promise.reject(error);
+    }
+  );
+
+  return instance;
+};
+
+let api = createAxiosInstance(BACKENDS.primary);
+
+// Enhanced request function with fallback logic
+const makeRequest = async (method, endpoint, data = null, config = {}) => {
+  try {
+    // Try primary backend
+    if (method === 'get') {
+      return await api.get(endpoint, config);
+    } else if (method === 'post') {
+      return await api.post(endpoint, data, config);
+    } else if (method === 'put') {
+      return await api.put(endpoint, data, config);
+    } else if (method === 'delete') {
+      return await api.delete(endpoint, config);
+    }
+  } catch (primaryError) {
+    // If we haven't tried fallback yet and primary failed
+    if (currentBackend === BACKENDS.primary) {
+      console.warn('⚠️ Primary backend failed, attempting fallback...');
+      currentBackend = BACKENDS.fallback;
+      currentBaseURL = BACKENDS.fallback;
+      api = createAxiosInstance(BACKENDS.fallback);
+
+      try {
+        // Retry with fallback backend
+        if (method === 'get') {
+          console.log(`✅ Using fallback backend: ${endpoint}`);
+          return await api.get(endpoint, config);
+        } else if (method === 'post') {
+          console.log(`✅ Using fallback backend: ${endpoint}`);
+          return await api.post(endpoint, data, config);
+        } else if (method === 'put') {
+          console.log(`✅ Using fallback backend: ${endpoint}`);
+          return await api.put(endpoint, data, config);
+        } else if (method === 'delete') {
+          console.log(`✅ Using fallback backend: ${endpoint}`);
+          return await api.delete(endpoint, config);
+        }
+      } catch (fallbackError) {
+        console.error('❌ Both backends failed. Primary error:', primaryError.message, 'Fallback error:', fallbackError.message);
+        throw new Error(`Both backends are unavailable. Primary: ${primaryError.message}`);
+      }
+    } else {
+      // Already on fallback, just throw the error
+      console.error('❌ Fallback backend error:', primaryError.message);
+      throw primaryError;
+    }
   }
-);
+};
 
+// Get current active backend URL (useful for debugging)
+export const getCurrentBackend = () => currentBaseURL;
+
+// Reset to primary backend (call this on app startup or recovery attempts)
+export const resetBackend = () => {
+  currentBackend = BACKENDS.primary;
+  currentBaseURL = BACKENDS.primary;
+  api = createAxiosInstance(BACKENDS.primary);
+  console.log('🔄 Backend reset to primary');
+};
+
+// Auth API with fallback
 export const authApi = {
-  login: (username, password) => api.post('/login', { username, password }),
-  register: (username, password) => api.post('/register', { username, password }),
+  login: (username, password) => 
+    makeRequest('post', '/login', { username, password }),
+  register: (username, password) => 
+    makeRequest('post', '/register', { username, password }),
 };
 
+// Tasks API with fallback
 export const tasksApi = {
-  getAll: () => api.get('/tasks'),
-  complete: (taskId) => api.put(`/tasks/${taskId}/complete`),
-  reset: () => api.post('/reset_tasks'),
+  getAll: () => 
+    makeRequest('get', '/tasks'),
+  complete: (taskId) => 
+    makeRequest('put', `/tasks/${taskId}/complete`),
+  reset: () => 
+    makeRequest('post', '/reset_tasks'),
 };
 
+// Recommendation API with fallback
 export const recommendationApi = {
-  get: () => api.get('/recommendation'),
+  get: () => 
+    makeRequest('get', '/recommendation'),
 };
 
+// Profile API with fallback
 export const profileApi = {
-  get: () => api.get('/profile'),
+  get: () => 
+    makeRequest('get', '/profile'),
 };
 
 export default api;
