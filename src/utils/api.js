@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-// Define your backend URLs
+// Define your backend URLs - Read from environment variables
 const BACKENDS = {
-  primary: 'https://task-recommendation-backend.onrender.com',
-  fallback: 'https://task-recommendation-backend.streamlit.app'
+  primary: process.env.REACT_APP_PRIMARY_BACKEND || 'https://task-recommendation-backend-production.up.railway.app',
+  fallback: process.env.REACT_APP_FALLBACK_BACKEND || 'https://task-recommendation-backend.onrender.com'
 };
 
 // Track which backend is currently active
@@ -14,7 +14,7 @@ let currentBaseURL = BACKENDS.primary;
 const createAxiosInstance = (baseURL) => {
   const instance = axios.create({
     baseURL,
-    timeout: 8000, // 8 second timeout
+    timeout: parseInt(process.env.REACT_APP_API_TIMEOUT) || 8000, // 8 second timeout
     headers: {
       'Content-Type': 'application/json',
     },
